@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Station Dashboard</title>
+
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Chart.js (for interactive charts) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  
+
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="container nav-container">
+        <a href="#" class="logo">SkyWatch</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#purpose">Project Purpose</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="mainContent">
+    <!-- Hero Section with Full-Bleed Background Image -->
+    <section id="home" class="hero">
+      <div class="container hero-text">
+        <h1>Welcome to SkyWatch</h1>
+        <p>Live weather data, right at your fingertips.</p>
+        <a href="#dashboard" class="btn-cta">View Dashboard</a>
+      </div>
+    </section>
+
+    <!-- Project Purpose Section -->
+    <section id="purpose" class="purpose-section">
+      <div class="container purpose-content">
+        <h2>Our Purpose</h2>
+        <p>
+          Due to the fact that weather data are typically collected by large scale meterological stations,
+          weather data today are too broad with little to no personalization. 
+          Weather stations typically focus more on forecasting data as well, 
+          meaning they barely pay attention to visualizing live data.
+          As a result, user are limited to accessing data that may not reflect the precise weather conditions around them.
+        </p>
+        <p>
+          Our project aims to create a user friendly, customizable and
+          non-bulky weather station that users can have access to in the comfort of their own home.  
+          With just a single click of a button, users are able to gain access to the latest weather data closest to them, enabling better decision making for their activities.
+          All of our code is open-source, ensuring that all our software is transparent, reliable and can be easily explained.
+        </p>
+      </div>
+    </section>
+
+    <!-- In Collaboration With Section -->
+    <section id="collaboration" class="collaboration-section">
+      <div class="container">
+        <h2>In Collaboration With:</h2>
+        <div class="collab-icons">
+          <a href="https://www.google.com" target="_blank" class="collab-icon">
+            <img src="google-logo.png" alt="Google" class="collab-logo"/>
+          </a>
+          <a href="https://www.blynk.io" target="_blank" class="collab-icon">
+            <img src="blynk-logo.png" alt="Blynk" class="collab-logo"/>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Dashboard Section -->
+    <section id="dashboard" class="dashboard-section">
+      <div class="container">
+        <!-- Google Sheets Embedded -->
+        <section id="googleSheet" class="google-sheet-section">
+          <div class="container">
+            <h2>Live Data from Google Sheets</h2>
+            <iframe width="800px" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQlrWXK26t66N8B4RrqpfPpbK2QRx5XjGmVFB4ZC8NDIucbKEFjlkOAAIWEMhDgqtUzbP9oEiDOG44d/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="600"></iframe>
+          </div>
+        </section>
+        <!-- Looker Embedded -->
+        <section id="Looker" class="Looker-section" style="margin-top: 50px;">
+          <div class="container">
+            <h2>Live Data from Looker Studio</h2>
+            <iframe width="800px" height="600"
+            margin: 0 auto; 
+            src="https://lookerstudio.google.com/embed/reporting/e44fab38-5a3d-4194-960c-cf2b6cc936eb/page/gNtgE" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+          </div>
+        </section>
+        <section style="margin-top: 50px;">
+          <div class="container">
+            <h2>Access The Blynk App Here</h2>
+            <a href="https://blynk.cloud/dashboard/722474/global/devices/1/organization/722474/devices/3021545/dashboard" target="_blank">
+              <img src="App.png" alt="Blynk App Dashboard" width="100%" height="400px">
+            </a>
+          </div>
+        </section>
+
+        <div class="dashboard-grid">
+          <!-- Weather Data Card -->
+         
+
+    <!-- Additional Info Section with Accordion -->
+    <section class="info-section">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="accordion">
+          <button class="accordion-toggle">Step 1: Data Collection</button>
+          <div class="accordion-content">
+            <p>
+              Our weather station is designed to focus on live data collection, prioritizing real-time updates. 
+              The sensors, including a DHT11 sensor, a raindrop sensor and a camera connected to the Raspberry Pi, 
+              measure environmental variables such as temperature, humidity, and cloud data. 
+              Cloud data includes the colour of the clouds, the cloud coverage, along with the texture of the clouds.
+              ensuring continuous monitoring of local conditions. 
+              The data is collected and displayed on the dashboard in real-time, 
+              allowing users to interact with the system instantly.
+            </p>
+          </div>
+          <button class="accordion-toggle">Step 2: Data Visualization</button>
+          <div class="accordion-content">
+            <p>
+              Unlike traditional weather stations that emphasize forecasting, 
+              our system is built around immediate data access. 
+              The Raspberry Pi processes incoming sensor data and immediately visualizes it on the Looker Studio and Blynk dashboard.
+              This means that users can see live weather conditions, such as fluctuations im temperature or humidity, 
+              with a single click of a button.
+            </p>
+          </div>
+          <button class="accordion-toggle">Step 3: Open-Source Transparency</button>
+          <div class="accordion-content">
+            <p>
+              All of our code is open-source, ensuring that every piece of software is transparent. 
+              By providing full access to our code, we foster a community-driven approach, 
+              allowing users to learn from, modify, and contribute to the development of the system. 
+              This enhances the reliability and integrity of the data and the system as a whole.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+          Have questions or feedback? Feel free to reach out:
+          <br>
+          <a href="mailto:info@weatherstation.com">info@weatherstation.com</a>
+          <p>Give us a call! 8899 7938</p>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; I Love Men</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" title="Go to top">&#8679;</button>
+
+  <!-- Chat Bubble & Chat Window -->
+  <div id="chatBubble" class="chat-bubble" onclick="toggleChatWindow()">Chat</div>
+  <div id="chatWindow" class="chat-window">
+    <div class="chat-header">
+      <span>Help &amp; Chat</span>
+      <button class="chat-close-btn" onclick="toggleChatWindow()">X</button>
+    </div>
+    <div class="chat-body" id="chatBody"></div>
+    <div class="chat-footer">
+      <input type="text" id="chatInput" placeholder="Type your question..." onkeydown="handleEnter(event)"/>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
